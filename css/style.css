@@ -1,0 +1,182 @@
+@import url('https://bg.allfont.net/allfont.css?fonts=futura-normal');
+*
+{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Futura-Normal', arial;
+ scroll-behavior: smooth;
+}
+body
+{
+ min-height: 100vh;
+ background: linear-gradient(#0150AD, #0f3662);
+ overflow-x: hidden;
+}
+header
+{
+  float: right;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.spacing
+{
+    display: none;
+}
+.logo
+{
+ padding-top:15px;
+ padding-left:15px;
+ justify-content: center;
+ height:100px;
+ width: 100px;	
+}
+header ul
+{
+ display:flex;
+ justify-content: center;
+ align-items: center;
+ padding-top: 20px;
+}
+header ul li
+{
+ list-style: none;
+ margin-left: 20px; 
+}
+header ul li a
+{
+ text-decoration: none;
+ padding: 5px 15px;
+ color: #fff;
+ font-size: 20px;
+ border-radius: 20px;
+ letter-spacing: 1px;
+ transition: 200ms;
+}
+header ul li a.homeb
+{
+ background: linear-gradient(90deg, #0f3662, #0150AD, #03a9f4,#03a9f4, #0150AD,#0f3662);
+ background-size: 400%;
+ text-shadow: 0 0 100px white;
+ animation: glow 8s linear infinite;
+ box-shadow: 0 0 10px 0 #03a9f4;
+}
+@keyframes glow{
+  0%{
+    background-position-x: 0%;
+  }
+  100%{
+    background-position-x: 400%;
+  }
+}
+header ul li a:hover
+{
+ background: #fff;
+ color: black;
+ transition: 200ms;
+ box-shadow: 0 0 0 0;
+ text-shadow: 0 0 0 0;
+}
+.hamburger div{
+    width: 30px;
+    height: 3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.hamburger{
+    display: none;
+}
+
+@media screen and (max-width: 800px){
+    nav{
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 4;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        background: #0151ad9d;
+        position: fixed;
+        opacity: 1;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+        margin-top: 5em;
+        margin-right: -9em;
+        z-index: 3;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 100% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+    header li
+    {
+        margin-bottom: 2em;
+    }
+    .spacing
+    {
+        display: block;
+        padding-bottom: 5em;
+    }
+    .toggle .bars1{
+            transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .bars2{
+        transition: all 0s ease;
+        width: 0;
+    }
+    .toggle .bars3{
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+}
